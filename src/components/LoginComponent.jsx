@@ -29,36 +29,36 @@ const LoginComponent = () => {
   };
 
   return (
-    <div className="login">
-      <h1>Login Page</h1>
-      <div className="login-form">
-        <div>
-          <div>
-            <label>User Name</label>
-            <input
-              type="text"
-              name="username"
-              value={username}
-              onChange={handleUsernameChange}
-            />
-          </div>
-          <label>Password</label>
-          <div>
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={handlePasswordChange}
-            />
-          </div>
-          <div>
-            <button type="button" name="login" onClick={handleSubmit}>
-              Login
-            </button>
-          </div>
-        </div>
+    <form className="container">
+      <div className="form-group">
+        <label htmlFor="username">User Name</label>
+        <input
+          type="text"
+          className="form-control"
+          name="username"
+          value={username}
+          onChange={handleUsernameChange}
+          id="username"
+          aria-describedby="username"
+          placeholder="Enter Username"
+        />
       </div>
-    </div>
+      <div className="form-group">
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={handlePasswordChange}
+          className="form-control"
+          id="password"
+          placeholder="Enter Password"
+        />
+      </div>
+      <button type="button" onClick={handleSubmit} className="btn btn-primary">
+        Submit
+      </button>
+    </form>
   );
 };
 
